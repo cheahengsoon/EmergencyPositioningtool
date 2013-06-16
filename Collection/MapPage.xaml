@@ -1,0 +1,36 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:Api="clr-namespace:Com.AMap.Maps.Api;assembly=AMap.WP7.Map.API" 
+    x:Class="Collection.MapPage" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <Grid x:Name="LayoutRoot" Loaded="LayoutRoot_Loaded">
+
+        <Api:MMap x:Name="mymap" Zoom="10" Visibility="Visible" Language="zh-CN"/>
+                  
+
+    </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsMenuEnabled="True" IsVisible="True" Opacity="0.2">
+            <shell:ApplicationBarIconButton Text="message" IconUri="122958.png" IsEnabled="True" Click="ApplicationBarIconButton_Click"/>
+            <shell:ApplicationBarIconButton Text="email" IconUri="/Assets/AppBar/appbar.feature.email.rest.png" Click="ApplicationBarIconButton_Click_1"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="share with media" Click="ApplicationBarMenuItem_Click"/>
+                
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,76 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Collection.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/Assets/5.png"/>
+        </Grid.Background>
+        <!--Pivot Control-->
+        <controls:Pivot Title="" Loaded="Pivot_Loaded">
+            <!--Pivot item one-->
+
+
+            <!--Pivot item two-->
+            <controls:PivotItem Header="" Margin="12,178,12,0">
+                <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="216*"/>
+                        <ColumnDefinition Width="169*"/>
+                        <ColumnDefinition Width="47*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Margin="-22,-162,-24,564" FontSize="42" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Width="478" Grid.ColumnSpan="3" Height="129">
+                		<Run Text=" Emergency Positioning "/>
+                		<LineBreak/>
+                		<Run Text="                "/>
+                		<Run Text=" "/>
+                		<Run Text="T"/>
+                		<Run Text="ool"/>
+                    </TextBlock>
+                    <StackPanel HorizontalAlignment="Left" Height="577" Margin="0,30,-24,0" VerticalAlignment="Top" Width="456" Grid.ColumnSpan="3">
+                        <TextBlock TextWrapping="Wrap" Margin="0,50,174,0">
+                    		<Run Text="Latitude"/>
+                    		<Run Text="："/>
+                        </TextBlock>
+                        <TextBox x:Name="LatitudeTextBlock" Height="72" TextWrapping="Wrap" Text="&#xD;&#xA;"/>
+                        <TextBlock Height="34" Margin="1,10,275,0" Text="Longitude:"/>
+                        <TextBox x:Name="LongitudeTextBlock" TextWrapping="Wrap" Width="Auto" Height="Auto"/>
+                        <TextBlock Width="Auto" Height="50" Text="Status:"/>
+                        <TextBox x:Name="StatusTextBlock" />
+                    </StackPanel>
+                    <TextBlock HorizontalAlignment="Left" Height="65" Margin="73,13,0,0" TextWrapping="Wrap" Text="Current Location" VerticalAlignment="Top" Width="312" FontSize="36" Grid.ColumnSpan="2"/>
+                </Grid>
+
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsMenuEnabled="True" IsVisible="True" Opacity="0.1">
+            <shell:ApplicationBarIconButton Text="Map" IconUri="/Assets/location_on.png" Click="startLocationButton_Click"/>
+
+            <shell:ApplicationBarIconButton Text="in message" IconUri="/122958.png" Click="SharePositionButton_Click"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem x:Name="LocationServiceButton" Text="settings" Click="ApplicationBarMenuItem_Click"/>
+                <shell:ApplicationBarMenuItem Text="Rate me" Click="ratingButton_Click"/>
+                <shell:ApplicationBarMenuItem Text="Feedback" Click="ContactMe_Click"/>
+                <shell:ApplicationBarMenuItem Text="about" Click="AboutButton_Click"/>
+
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+
+</phone:PhoneApplicationPage>
